@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="DDScrollProgressViewA lightweight and interactable progress components of iOS   Demo ProjectFind  Demo/DDScrollProgressView.xcodeproj InstallationCocoaPods Add pod &amp;#39;DDScrollProgressView&amp;#39; to yo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DDScrollProgressView 说明文档">
+<meta property="og:url" content="http://yoursite.com/2019/05/16/DDScrollProgressView/index.html">
+<meta property="og:site_name" content="FizzChou">
+<meta property="og:description" content="DDScrollProgressViewA lightweight and interactable progress components of iOS   Demo ProjectFind  Demo/DDScrollProgressView.xcodeproj InstallationCocoaPods Add pod &amp;#39;DDScrollProgressView&amp;#39; to yo">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/jaychouzhou/DDScrollProgressView/blob/master/Demo/SupFiles/Snapshot/demo2.gif?raw=true">
+<meta property="og:image" content="https://github.com/jaychouzhou/DDScrollProgressView/blob/master/Demo/SupFiles/Snapshot/demo2.gif?raw=true">
+<meta property="og:updated_time" content="2020-01-15T12:04:43.562Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DDScrollProgressView 说明文档">
+<meta name="twitter:description" content="DDScrollProgressViewA lightweight and interactable progress components of iOS   Demo ProjectFind  Demo/DDScrollProgressView.xcodeproj InstallationCocoaPods Add pod &amp;#39;DDScrollProgressView&amp;#39; to yo">
+<meta name="twitter:image" content="https://github.com/jaychouzhou/DDScrollProgressView/blob/master/Demo/SupFiles/Snapshot/demo2.gif?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/16/DDScrollProgressView/">
+
+
+
+
+
+  <title>DDScrollProgressView 说明文档 | FizzChou</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">FizzChou</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/16/DDScrollProgressView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FizzChou">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FizzChou">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DDScrollProgressView 说明文档</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-16T16:33:32+08:00">
+                2019-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="DDScrollProgressView"><a href="#DDScrollProgressView" class="headerlink" title="DDScrollProgressView"></a>DDScrollProgressView</h1><p>A lightweight and interactable progress components of iOS  </p>
+<h1 id="Demo-Project"><a href="#Demo-Project" class="headerlink" title="Demo Project"></a>Demo Project</h1><p>Find  <code>Demo/DDScrollProgressView.xcodeproj</code><br><img src="https://github.com/jaychouzhou/DDScrollProgressView/blob/master/Demo/SupFiles/Snapshot/demo2.gif?raw=true" alt="demo~"></p>
+<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><h3 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><ol>
+<li>Add <code>pod &#39;DDScrollProgressView&#39;</code> to your Podfile.</li>
+<li>Run <code>pod install</code> or <code>pod update</code>.</li>
+<li>Import correspond header file</li>
+</ol>
+<h3 id="Manually"><a href="#Manually" class="headerlink" title="Manually"></a>Manually</h3><ol>
+<li>Download all the files in the <code>DDScrollProgressView</code> directory.</li>
+<li>Add the source files to you Xocde project</li>
+<li>Import correspond header file</li>
+</ol>
+<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><h3 id="Display-default-progress"><a href="#Display-default-progress" class="headerlink" title="Display default progress"></a>Display default progress</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DDScrollProgressView * ddView = [DDScrollProgressView DDScrollProgressView:<span class="built_in">CGRectMake</span>(x, y, width, width)];</span><br><span class="line">ddView.willChangeBlock = ^(DDScrollProgressView * _Nonnull progressView) &#123;</span><br><span class="line">    <span class="comment">//rotating progress callback</span></span><br><span class="line">&#125;;</span><br><span class="line">ddView.didEndChangedBlock = ^(DDScrollProgressView * _Nonnull progressView) &#123;</span><br><span class="line">    <span class="comment">//end rotated progress callback</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Display-with-nubmer-indicate"><a href="#Display-with-nubmer-indicate" class="headerlink" title="Display with nubmer indicate"></a>Display with nubmer indicate</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">DDScrollProgressView * ddView = [DDScrollProgressView DDScrollProgressView:<span class="built_in">CGRectMake</span>(x, y, width, width)];</span><br><span class="line">ddView.backgroundColor = <span class="built_in">UIColor</span>.clearColor;</span><br><span class="line"><span class="built_in">CGFloat</span> gap = <span class="number">25.0</span>f;</span><br><span class="line">ExtraIndicateView * extraView = [ExtraIndicateView extraIndicateViewWithDataSource:[ddView getSectionRadians] frame:<span class="built_in">CGRectMake</span>(x - gap, y - gap, width + gap *<span class="number">2</span>, width + gap *<span class="number">2</span>)];</span><br><span class="line">ddView.willChangeBlock = ^(DDScrollProgressView * _Nonnull progressView) &#123;</span><br><span class="line"><span class="comment">//rotating progress callback</span></span><br><span class="line"><span class="comment">//Coloring ExtraIndicateView number</span></span><br><span class="line">[extraView setSelectedIndicate:progressView.curScale];</span><br><span class="line"><span class="comment">//[extraView setSelectedIndicate: ceil(round(progressView.curScale / 5.0))];</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ddView.didEndChangedBlock = ^(DDScrollProgressView * _Nonnull progressView) &#123;</span><br><span class="line"><span class="comment">//end rotated progress callback</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Customize-Feature"><a href="#Customize-Feature" class="headerlink" title="Customize Feature"></a>Customize Feature</h3><ul>
+<li>Summary look below, detail find to <code>Demo/DDScrollProgressView.xcodeproj</code><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//set currently scale then refresh</span></span><br><span class="line">-(<span class="keyword">void</span>)setCurScale:(<span class="built_in">NSInteger</span>)curScale;</span><br><span class="line"></span><br><span class="line"><span class="comment">//set currently radian then refresh</span></span><br><span class="line">-(<span class="keyword">void</span>)setCurRadian:(<span class="built_in">CGFloat</span>)curRadian;</span><br><span class="line"></span><br><span class="line"><span class="comment">//set the radian of blank area</span></span><br><span class="line">-(<span class="keyword">void</span>)setBlankAreaWithIgnoreRadian:(<span class="built_in">CGFloat</span>)radian;</span><br><span class="line"></span><br><span class="line"><span class="comment">//The total number of segment bar and section,maybe discharge some segment when cannot divisible</span></span><br><span class="line">-(<span class="keyword">void</span>)setTotalsSegmentCounts:(<span class="built_in">NSInteger</span>)counts andSections:(<span class="built_in">NSInteger</span>)sections;</span><br><span class="line"></span><br><span class="line"><span class="comment">// getter radians of sections</span></span><br><span class="line">-(<span class="built_in">NSArray</span> *)getSectionRadians;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h1><p>This library requires <code>iOS 8.0+</code> and <code>Xcode 8.0+</code>.</p>
+<h2 id><a href="#" class="headerlink" title></a><br><br></h2><h1 id="中文介绍"><a href="#中文介绍" class="headerlink" title="中文介绍"></a>中文介绍</h1><p>这是一个轻量级，可交互，可定制的类仪表盘进度组件</p>
+<h1 id="演示项目"><a href="#演示项目" class="headerlink" title="演示项目"></a>演示项目</h1><p>下载demo，并运行 <code>Demo/DDScrollProgressView.xcodeproj</code><br><img src="https://github.com/jaychouzhou/DDScrollProgressView/blob/master/Demo/SupFiles/Snapshot/demo2.gif?raw=true" alt="demo~"></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h3 id="CocoaPods-1"><a href="#CocoaPods-1" class="headerlink" title="CocoaPods"></a>CocoaPods</h3><ol>
+<li>在 Podfile 中添加  <code>pod &#39;DDScrollProgressView&#39;</code>。</li>
+<li>执行 <code>pod install</code> 或 <code>pod update</code>。</li>
+<li>导入相应头文件。</li>
+</ol>
+<h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><ol>
+<li>下载 <code>DDScrollProgressView</code>文件夹内的所有内容。</li>
+<li>将 <code>DDScrollProgressView</code> 内的源文件添加(拖放)到你的工程。</li>
+</ol>
+<h1 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage"></a>Usage</h1><h3 id="使用默认ScrollProgressView"><a href="#使用默认ScrollProgressView" class="headerlink" title="使用默认ScrollProgressView"></a>使用默认ScrollProgressView</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DDScrollProgressView * ddView = [DDScrollProgressView DDScrollProgressView:<span class="built_in">CGRectMake</span>(x, y, width, width)];</span><br><span class="line">ddView.willChangeBlock = ^(DDScrollProgressView * _Nonnull progressView) &#123;</span><br><span class="line"><span class="comment">//旋转时回调</span></span><br><span class="line">&#125;;</span><br><span class="line">ddView.didEndChangedBlock = ^(DDScrollProgressView * _Nonnull progressView) &#123;</span><br><span class="line"><span class="comment">//旋转结束时回调</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="结合ExtraIndicateView使用"><a href="#结合ExtraIndicateView使用" class="headerlink" title="结合ExtraIndicateView使用"></a>结合ExtraIndicateView使用</h3><ul>
+<li>外层带有数字显示，并且数字状态同步变化<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">DDScrollProgressView * ddView = [DDScrollProgressView DDScrollProgressView:<span class="built_in">CGRectMake</span>(x, y, width, width)];</span><br><span class="line">ddView.backgroundColor = <span class="built_in">UIColor</span>.clearColor;</span><br><span class="line"><span class="built_in">CGFloat</span> gap = <span class="number">25.0</span>f;</span><br><span class="line">ExtraIndicateView * extraView = [ExtraIndicateView extraIndicateViewWithDataSource:[ddView getSectionRadians] frame:<span class="built_in">CGRectMake</span>(x - gap, y - gap, width + gap *<span class="number">2</span>, width + gap *<span class="number">2</span>)];</span><br><span class="line">ddView.willChangeBlock = ^(DDScrollProgressView * _Nonnull progressView) &#123;</span><br><span class="line"><span class="comment">////旋转时回调</span></span><br><span class="line"><span class="comment">//ExtraIndicateView，数字颜色同步变化</span></span><br><span class="line">[extraView setSelectedIndicate:progressView.curScale];</span><br><span class="line"><span class="comment">//[extraView setSelectedIndicate: ceil(round(progressView.curScale / 5.0))];</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ddView.didEndChangedBlock = ^(DDScrollProgressView * _Nonnull progressView) &#123;</span><br><span class="line"><span class="comment">//旋转结束时回调</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="自定义特性"><a href="#自定义特性" class="headerlink" title="自定义特性"></a>自定义特性</h3><ul>
+<li>简要如下所示, 详细请查看<code>Demo/DDScrollProgressView.xcodeproj</code> <strong><em>更多等你来战</em></strong><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置当前的进度，并且刷新</span></span><br><span class="line">-(<span class="keyword">void</span>)setCurScale:(<span class="built_in">NSInteger</span>)curScale;</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置当前的弧度，并且刷新</span></span><br><span class="line">-(<span class="keyword">void</span>)setCurRadian:(<span class="built_in">CGFloat</span>)curRadian;</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置空白区域所占的弧度，并且刷新</span></span><br><span class="line">-(<span class="keyword">void</span>)setBlankAreaWithIgnoreRadian:(<span class="built_in">CGFloat</span>)radian;</span><br><span class="line"></span><br><span class="line"><span class="comment">//分割线总数，分多少个组。注意：会进行“取模，去掉余数”操作</span></span><br><span class="line">-(<span class="keyword">void</span>)setTotalsSegmentCounts:(<span class="built_in">NSInteger</span>)counts andSections:(<span class="built_in">NSInteger</span>)sections;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 得到所有组对应的弧度</span></span><br><span class="line">-(<span class="built_in">NSArray</span> *)getSectionRadians;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h1><p>该项目最低支持 <code>iOS 8.0</code> 和 <code>Xcode 8.0</code>。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/15/StrategyPattern/" rel="prev" title="StrategyPattern">
+                StrategyPattern <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">FizzChou</p>
+              <p class="site-description motion-element" itemprop="description">ios developer</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DDScrollProgressView"><span class="nav-number">1.</span> <span class="nav-text">DDScrollProgressView</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Demo-Project"><span class="nav-number">2.</span> <span class="nav-text">Demo Project</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installation"><span class="nav-number">3.</span> <span class="nav-text">Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CocoaPods"><span class="nav-number">3.0.1.</span> <span class="nav-text">CocoaPods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manually"><span class="nav-number">3.0.2.</span> <span class="nav-text">Manually</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#Usage"><span class="nav-number">4.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Display-default-progress"><span class="nav-number">4.0.1.</span> <span class="nav-text">Display default progress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Display-with-nubmer-indicate"><span class="nav-number">4.0.2.</span> <span class="nav-text">Display with nubmer indicate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Customize-Feature"><span class="nav-number">4.0.3.</span> <span class="nav-text">Customize Feature</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements"><span class="nav-number">5.</span> <span class="nav-text">Requirements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中文介绍"><span class="nav-number">6.</span> <span class="nav-text">中文介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#演示项目"><span class="nav-number">7.</span> <span class="nav-text">演示项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">8.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CocoaPods-1"><span class="nav-number">8.0.1.</span> <span class="nav-text">CocoaPods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动安装"><span class="nav-number">8.0.2.</span> <span class="nav-text">手动安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Usage-1"><span class="nav-number">9.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用默认ScrollProgressView"><span class="nav-number">9.0.1.</span> <span class="nav-text">使用默认ScrollProgressView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结合ExtraIndicateView使用"><span class="nav-number">9.0.2.</span> <span class="nav-text">结合ExtraIndicateView使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义特性"><span class="nav-number">9.0.3.</span> <span class="nav-text">自定义特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统要求"><span class="nav-number">10.</span> <span class="nav-text">系统要求</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FizzChou</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
