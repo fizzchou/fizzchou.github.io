@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/fizzchou/fizzchou.github.io/blob/master/source/imgaes/strategy/strategy_relate.png?raw=true">
 <meta property="og:image" content="https://github.com/fizzchou/fizzchou.github.io/blob/master/source/imgaes/strategy/%20strategy_result.png?raw=true">
-<meta property="og:updated_time" content="2020-01-21T07:52:49.438Z">
+<meta property="og:updated_time" content="2020-01-21T07:55:34.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="策略模式 Strategy Pattern">
 <meta name="twitter:description" content="前言本文主要分为上下2部分，第一部分介绍与策略模式相关的设计原则，以及策略模式的定义。第二部分将使用Duck的Demo阐述策略模式的的实际运用。第一部分建议沉下心来慢慢体会，第二部分建议可以发散思维，进而回味策略模式与设计模式的魅力 上篇 使用模式最好的方式是：把模式装进脑子，然后在你的设计和已有的应用中，寻找何处可以使用它们 软件开发不变的真理:CHANGE 设计原则1: 把变化的部分取出来，独">
@@ -351,8 +351,8 @@
 </li>
 </ul>
 <blockquote>
-<pre><code>发声行为：
-</code></pre></blockquote>
+<p>发声行为：</p>
+</blockquote>
 <pre><code><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Quark</span> : <span class="title">QuarkBehavior</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">quark</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"A B C aloud!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MuteQuark</span> : <span class="title">QuarkBehavior</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">quark</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Mute!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p>我们的主角 <strong><em>野鸭</em></strong> 与 <strong>模型鸭</strong></p>
@@ -366,8 +366,8 @@
 </li>
 </ul>
 <blockquote>
-<pre><code>打印结果
-</code></pre></blockquote>
+<p>打印结果</p>
+</blockquote>
 <p><img src="https://github.com/fizzchou/fizzchou.github.io/blob/master/source/imgaes/strategy/%20strategy_result.png?raw=true" alt="image"></p>
 <h3 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h3><ul>
 <li>使用设计模式交流，多多易善，高效【程序员有自己的共享语言】</li>
