@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Publishers + Subscribers = Observer Pattern第二个设计模式 Observer Pattern 观察者模式  定义了对象之间的一对多的关系 当一个对象改变主题状态，其他依赖者都会收到通知 优点在有解耦合 设计原则4: 为了交互对象之间的解耦合而努力 不使用Java为Observer提供的内置支持，自己动手写【更弹性，学习】如有需要自己实现更合理 update">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Observer Pattern">
-<meta property="og:url" content="http://yoursite.com/2020/01/17/ObserverPattern/index.html">
+<meta name="description" content="The power of extension at runtime,rather than at complie time   Design Eye for the Inheritance Guy 继承是静态编译时，组合是动态运行时 设计原则5: 开闭原则:开放扩展，关闭修改   开：保持弹性，易扩展 闭：保持现有代码，减少bug 不改变原代码的情况下扩展，不要滥用，否则适得其反 第三个设计模式">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Decorator Pattern">
+<meta property="og:url" content="http://yoursite.com/back_fizz/Decorator.html">
 <meta property="og:site_name" content="FizzChou">
-<meta property="og:description" content="Publishers + Subscribers = Observer Pattern第二个设计模式 Observer Pattern 观察者模式  定义了对象之间的一对多的关系 当一个对象改变主题状态，其他依赖者都会收到通知 优点在有解耦合 设计原则4: 为了交互对象之间的解耦合而努力 不使用Java为Observer提供的内置支持，自己动手写【更弹性，学习】如有需要自己实现更合理 update">
+<meta property="og:description" content="The power of extension at runtime,rather than at complie time   Design Eye for the Inheritance Guy 继承是静态编译时，组合是动态运行时 设计原则5: 开闭原则:开放扩展，关闭修改   开：保持弹性，易扩展 闭：保持现有代码，减少bug 不改变原代码的情况下扩展，不要滥用，否则适得其反 第三个设计模式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-17T09:29:07.689Z">
+<meta property="og:updated_time" content="2020-01-17T09:33:13.255Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Observer Pattern">
-<meta name="twitter:description" content="Publishers + Subscribers = Observer Pattern第二个设计模式 Observer Pattern 观察者模式  定义了对象之间的一对多的关系 当一个对象改变主题状态，其他依赖者都会收到通知 优点在有解耦合 设计原则4: 为了交互对象之间的解耦合而努力 不使用Java为Observer提供的内置支持，自己动手写【更弹性，学习】如有需要自己实现更合理 update">
+<meta name="twitter:title" content="Decorator Pattern">
+<meta name="twitter:description" content="The power of extension at runtime,rather than at complie time   Design Eye for the Inheritance Guy 继承是静态编译时，组合是动态运行时 设计原则5: 开闭原则:开放扩展，关闭修改   开：保持弹性，易扩展 闭：保持现有代码，减少bug 不改变原代码的情况下扩展，不要滥用，否则适得其反 第三个设计模式">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/01/17/ObserverPattern/">
+  <link rel="canonical" href="http://yoursite.com/back_fizz/Decorator.html">
 
 
 
 
 
-  <title>Observer Pattern | FizzChou</title>
+  <title>Decorator Pattern | FizzChou</title>
   
 
 
@@ -220,170 +220,58 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/17/ObserverPattern/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FizzChou">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FizzChou">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Observer Pattern</h1>
-        
+	<h1 class="post-title" itemprop="name headline">Decorator Pattern</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-17T17:27:16+08:00">
-                2020-01-17
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/17/ObserverPattern/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/17/ObserverPattern/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p><strong>Publishers + Subscribers = Observer Pattern</strong><br><span style="color:red"><strong>第二个设计模式 Observer Pattern 观察者模式</strong></span></p>
+      <div class="post-body">
+        
+        
+          <p><strong><em>The power of extension at runtime,rather than at complie time</em></strong> </p>
 <ul>
-<li>定义了对象之间的一对多的关系</li>
-<li>当一个对象改变主题状态，其他依赖者都会收到通知</li>
-<li>优点在有解耦合</li>
-<li><strong>设计原则4:</strong> <span style="color:red"><em>为了交互对象之间的解耦合而努力</em></span></li>
-<li>不使用Java为Observer提供的内置支持，自己动手写【更弹性，学习】<span style="color:blue">如有需要自己实现更合理</span></li>
-<li>update()多采用观察者主动去pull而不是被push<strong>观察者多样性，观察者的需求多样，可能只要一点，而你push他一大推</strong></li>
-<li>java内置观察者</li>
+<li>Design Eye for the Inheritance Guy</li>
+<li>继承是静态编译时，组合是动态运行时</li>
+<li><strong>设计原则5:</strong> <span style="color:blue"><em>开闭原则:开放扩展，关闭修改</em></span></li>
 </ul>
 <ol>
-<li>Subject对应Observable类继承关系</li>
-<li>Observer对应Observer接口</li>
-<li>如何发送通知<span style="color:blue">a.先调用setChanged() b.在调用notifyObservers()方法的一个</span></li>
-<li>优点在于Subject不需要手动实现增加删除通知操作，</li>
-<li>不要依赖于观察者被通知次序</li>
-<li>缺点 Observable是类不是接口，不易复用；setChanged（）方法是protected的违法了设计原则“多组合少继承”</li>
-<li>不仅仅 在java.util 在Swing 和JavaBeans,RMI等都实现了观察者模式</li>
+<li>开：保持弹性，易扩展</li>
+<li>闭：保持现有代码，减少bug</li>
+<li>不改变原代码的情况下扩展，不要滥用，否则适得其反</li>
+<li><span style="color:red"><strong>第三个设计模式 Decorator Pattern 装饰者模式：</strong></span> <strong>动态地将责任附加到对象上，比继承更有弹性，更灵活</strong></li>
+<li>装饰者与被装饰者具有相同的超类<strong>继承：“进行类型匹配”</strong><br>2.装饰者可以在所委托被装饰者的行为之前与之后，加上自己的行为，以达到特定的目的<br>3.可以任何时候被装饰，并且不限量<br>4.每个装饰者都有一个组件，以保存componet的引用<br>5.componet可以是抽象类或者是接口，一般为抽象类</li>
+<li>装饰者<strong>必须</strong>能取代被装饰者</li>
+<li>装饰模式是针对抽象组件编程,而<strong>不是</strong>具体的组件</li>
+<li>装饰模式该做的事情是：<strong>增加行为到被包装的对象</strong> 如果非要窥伺修饰者链条中的其他装饰者，也是可行的，再加装饰者进行<strong>特定解析</strong></li>
+</ol>
+<ul>
+<li>java.io包中很多类都是装饰者</li>
+</ul>
+<ol>
+<li>FileInputStream&gt;BufferedInputStream&gt;LineNumberInputStream <strong><em>【BufferedInputStream and LineNumberInputStream both extend FilterInputStream】</em></strong></li>
+<li>java.io 利用装饰者模式，会带来很多小类的缺点</li>
+<li>编写自己的java I/O 装饰者</li>
+<li>抽象组件为InputStream 全是装饰者</li>
 </ol>
 
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/01/15/StrategyPattern/" rel="next" title="Strategy Pattern">
-                <i class="fa fa-chevron-left"></i> Strategy Pattern
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/01/17/Decorator/" rel="prev" title="Decorator Pattern">
-                Decorator Pattern <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -442,7 +330,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -626,9 +514,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2020/01/17/ObserverPattern/';
-          this.page.identifier = '2020/01/17/ObserverPattern/';
-          this.page.title = 'Observer Pattern';
+          this.page.url = 'http://yoursite.com/back_fizz/Decorator.html';
+          this.page.identifier = 'back_fizz/Decorator.html';
+          this.page.title = 'Decorator Pattern';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://fizzchou.disqus.com/embed.js';
