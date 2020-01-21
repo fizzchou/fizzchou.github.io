@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/fizzchou/fizzchou.github.io/blob/master/source/imgaes/strategy/strategy_relate.png?raw=true">
 <meta property="og:image" content="https://github.com/fizzchou/fizzchou.github.io/blob/master/source/imgaes/strategy/%20strategy_result.png?raw=true">
-<meta property="og:updated_time" content="2020-01-21T07:38:24.774Z">
+<meta property="og:updated_time" content="2020-01-21T07:45:14.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="策略模式 Strategy Pattern">
 <meta name="twitter:description" content="前言本文主要分为上下2部分，第一部分介绍与策略模式相关的设计原则，以及策略模式的定义。第二部分将使用Duck的Demo阐述策略模式的的实际运用。第一部分建议沉下心来慢慢体会，第二部分建议可以发散思维，进而回味策略模式与设计模式的魅力 上篇 使用模式最好的方式是：把模式装进脑子，然后在你的设计和已有的应用中，寻找何处可以使用它们 软件开发不变的真理:CHANGE 设计原则1: 把变化的部分取出来，独">
@@ -317,21 +317,19 @@
 <li>使用模式最好的方式是：<strong><em>把模式装进脑子，然后在你的设计和已有的应用中，寻找何处可以使用它们</em></strong></li>
 <li>软件开发不变的真理:<span style="color :blue">CHANGE</span></li>
 <li><strong>设计原则1:</strong> <span style="color:blue"><em>把变化的部分取出来，独立出来，封装起来，从而不影响其他部分</em></span></li>
-<li><strong>设计原则2:</strong> <span style="color:blue"><em>针对接口编程，而不是针对实现编程</em></span> (真正的意思是针对超类型编程)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Animal animal = <span class="keyword">new</span> dog(); <span class="comment">// new cat(); </span></span><br><span class="line">animal.makeSound         <span class="comment">//多态</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li><p><strong>设计原则2:</strong> <span style="color:blue"><em>针对接口编程，而不是针对实现编程</em></span> (真正的意思是针对超类型编程)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Animal animal = <span class="keyword">new</span> dog(); <span class="comment">// new cat(); </span></span><br><span class="line">animal.makeSound         <span class="comment">//多态</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>关键在于利用多态，真正的意思是：“针对超类型编程”-&gt;<span style="color:brown">运行时确定具体行为，而不会绑死在超类的行为上</span> </p>
 </blockquote>
-<ul>
-<li><strong>设计原则3:</strong> <span style="color:blue"><em>多组合少继承</em> </span>    <blockquote>
+</li>
+<li><p><strong>设计原则3:</strong> <span style="color:blue"><em>多组合少继承</em> </span>    </p>
+<blockquote>
 <p><strong><em>HAS-A can be better than IS-A</em></strong></p>
 </blockquote>
 </li>
-</ul>
-<hr>
-<ul>
-<li><span style="color:red"><strong>Strategy Pattern 策略模式</strong></span><blockquote>
+<li><p><span style="color:red"><strong>Strategy Pattern 策略模式</strong></span></p>
+<blockquote>
 <p>定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户<br><em>Defines a family of algorithms,encapsulates each one and makes them interchangeable.Strategy lets the algorithm vary independently from clients that use it</em></p>
 </blockquote>
 </li>
@@ -348,10 +346,10 @@
 <li><p>新建行为协议（接口）代理（实现类）</p>
 <blockquote>
 <p>飞行行为：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FlyWithWings</span> : <span class="title">FlyBehavior</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">fly</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"I can fly"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FlyNoWay</span> : <span class="title">FlyBehavior</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">fly</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Sorry, I can't fly"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FlyWithWings</span> : <span class="title">FlyBehavior</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">fly</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"I can fly"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FlyNoWay</span> : <span class="title">FlyBehavior</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">fly</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Sorry, I can't fly"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>发声行为：</p>
 </blockquote>
@@ -361,11 +359,11 @@
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WildDuck</span> : <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">display</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"i'am wildDuck"</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>()</span><br><span class="line">        flyBehavior = <span class="type">FlyWithWings</span>()</span><br><span class="line">        quarkBehavior = <span class="type">Quark</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimDuck</span> : <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">display</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"i'am simDuck"</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">init</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>()</span><br><span class="line">        flyBehavior = <span class="type">FlyNoWay</span>()</span><br><span class="line">        quarkBehavior = <span class="type">MuteQuark</span>()</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>实践是检验真理的唯一手段<blockquote>
+<li>实践是检验真理的唯一手段</li>
+</ul>
+<blockquote>
 <p>测试代码与结果</p>
 </blockquote>
-</li>
-</ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">wildDuck.display()</span><br><span class="line">wildDuck.performFly()</span><br><span class="line">wildDuck.performQuark()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"-------------------------"</span>)</span><br><span class="line"></span><br><span class="line">simDuck.display()</span><br><span class="line">simDuck.performFly()</span><br><span class="line">simDuck.performQuark()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"------- By Accident -----"</span>)<span class="comment">//eg: 被小朋友扔石头打伤</span></span><br><span class="line">wildDuck.display()</span><br><span class="line">wildDuck.flyBehavior = <span class="type">FlyNoWay</span>()</span><br><span class="line">wildDuck.performFly()</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>打印结果</p>
@@ -373,7 +371,7 @@
 <p><img src="https://github.com/fizzchou/fizzchou.github.io/blob/master/source/imgaes/strategy/%20strategy_result.png?raw=true" alt="image"></p>
 <h3 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h3><ul>
 <li>使用设计模式交流，多多易善，高效【程序员有自己的共享语言】</li>
-<li>编程是一门艺术，设计模式是前人辛苦整理得出的【是oo经验】 <span style="color:blue ;font-size:12px">具有弹性，易维护，可以应付变化的oo系统才是好系统<span></span></span></li>
+<li>编程是一门艺术，设计模式是前人辛苦整理得出的【是oo经验】 <span style="color:blue ;font-size:14px">具有弹性，易维护，可以应付变化的oo系统才是好系统<span></span></span></li>
 <li>了解OO的基础不足以设计出良好的OO系统</li>
 <li>好的OO设计是：可复用，易扩展，易维护</li>
 <li>设计模式不是被发明的，而是被发现的</li>
